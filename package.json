@@ -1,0 +1,20 @@
+{
+  "name": "fox-tamagotchi",
+  "version": "1.0.0",
+  "description": "A mini tamagotchi replica game build using HTML/CSS/JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurnisurni/fox-tamagotchi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurnisurni/fox-tamagotchi/issues"
+  },
+  "homepage": "https://github.com/kurnisurni/fox-tamagotchi#readme"
+}
