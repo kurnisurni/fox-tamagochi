@@ -1,8 +1,11 @@
+import game from "./gamestate";
+
 const TICK_RATE = 3000;
 
-function tick() {
-    console.log("tick", Date.now());
-}
+// we removed this tick() function, bcs we have implemented in gameState.js
+// function tick() {
+//     console.log("tick", Date.now());
+// } 
 
 async function init() {
     console.log("starting game");
@@ -12,8 +15,9 @@ async function init() {
 
     function nextAnimationFrame() {
         const now = Date.now();
+
         if (nextTimeToTick <= now) {
-            tick();
+            game.tick(); //add variable from import
             nextTimeToTick = now + TICK_RATE;
         }
 
