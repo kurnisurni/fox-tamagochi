@@ -1,6 +1,6 @@
 import game from "./gamestate";
-
-const TICK_RATE = 3000;
+import { TICK_RATE } from "./constants";
+import initButtons from "./buttons";
 
 // we removed this tick() function, bcs we have implemented in gameState.js
 // function tick() {
@@ -9,6 +9,7 @@ const TICK_RATE = 3000;
 
 async function init() {
     console.log("starting game");
+    initButtons(game.handleUserAction);
 
     // Function inside of function = closure, persisted time over async fn call
     let nextTimeToTick = Date.now();
