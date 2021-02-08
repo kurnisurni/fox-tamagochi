@@ -1,4 +1,4 @@
-import game from "./gamestate";
+import game, { handleUserAction } from "./gameState";
 import { TICK_RATE } from "./constants";
 import initButtons from "./buttons";
 
@@ -9,7 +9,7 @@ import initButtons from "./buttons";
 
 async function init() {
     console.log("starting game");
-    initButtons(game.handleUserAction);
+    initButtons(handleUserAction);
 
     // Function inside of function = closure, persisted time over async fn call
     let nextTimeToTick = Date.now();
