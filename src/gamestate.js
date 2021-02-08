@@ -1,4 +1,4 @@
-import { modFox, modScene } from "./ui";
+import { modFox, modScene, togglePoopBag } from "./ui";
 import { RAIN_CHANCE, SCENES, DAY_LENGTH, NIGHT_LENGTH, getNextHungerTime, getNextDieTime, getNextPoopTime } from "./constants";
 
 const gameState = {
@@ -11,9 +11,10 @@ const gameState = {
     dieTime: -1,
     timeToStartCelebrating: -1,
     timeToEndCelebrating: -1,
+    poopTime: -1,
     tick() {
         this.clock++;
-        console.log("clock", this.clock);
+        console.log("clock", this.clock, this);
 
         if (this.clock === this.wakeTime) {
             this.wake();
@@ -27,6 +28,8 @@ const gameState = {
             this.startCelebrating();
         } else if (this.clock === this.timeToEndCelebrating) {
             this.endCelebrating();
+        } else if (this.clock === this.poopTime) {
+            this.poop();
         }
         return this.clock;
     },
@@ -60,6 +63,12 @@ const gameState = {
         this.hungryTime = -1;
         modFox("hungry");
     },
+    poop() {
+        this.current = "POOPING";
+        this.poopTime = -1;
+        this.dieTime = getNextDieTime(this.clock);
+        modFox("pooping");
+    },
     die() {
         console.log("die");
     },
@@ -73,6 +82,7 @@ const gameState = {
         this.timeToEndCelebrating = -1;
         this.current = "IDLING";
         this.determineFoxState();
+        togglePoopBag(false);
     },
     // when raining turn back, if idle/daytime look at camera
     determineFoxState() {
@@ -112,7 +122,13 @@ const gameState = {
         console.log("changeWeather");
     },
     cleanUpPoop() {
-        console.log("cleanUpPoop");
+        if (!this.current === "POOPING") {
+            return;
+        }
+        this.dieTime = -1;
+        togglePoopBag(true);
+        this.startCelebrating();
+        this.hungryTime = getNextHungerTime(this.clock);
     },
     feed() {
         if (this.current === !"HUNGRY") {
