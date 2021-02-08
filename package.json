@@ -6,11 +6,13 @@
     "scripts": {
         "build": "parcel build src/index.html",
         "dev": "parcel src/index.html",
+        "start": "serve -s build",
         "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
         "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
         "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js,ts}\"",
         "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js,ts}\"",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "heroku-postbuild": "npm run build"
     },
     "repository": {
         "type": "git",
@@ -35,5 +37,8 @@
     ],
     "optionalDependencies": {
         "fsevents": "^2.3.2"
+    },
+    "dependencies": {
+        "serve": "^11.3.2"
     }
 }
