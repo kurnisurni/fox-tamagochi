@@ -89,13 +89,17 @@ body {
 
 /* modal */
 
-.modal {
+.modal-inner {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    background-color: blueviolet;
+    background-color: rgb(179, 24, 24);
     color: white;
+    padding: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
 }
 
 .modal:empty {
