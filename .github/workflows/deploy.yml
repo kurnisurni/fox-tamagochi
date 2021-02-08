@@ -14,7 +14,7 @@ jobs:
         working-directory: src
         run: |
           npm install
-          npm run build -- --public-url /fox-tamagochi/
+          npm run build -- --public-url /fox-tamagotchi/
       - name: Deploy site to gh-pages branch
         uses: crazy-max/ghaction-github-pages@v1.4.0
         env:
