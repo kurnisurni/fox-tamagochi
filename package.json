@@ -2,10 +2,14 @@
     "name": "fox-tamagotchi",
     "version": "1.0.0",
     "description": "A mini tamagotchi replica game build using HTML/CSS/JS.",
-    "main": "index.js",
+    "main": "src/index.html",
     "scripts": {
+        "build": "parcel build src/index.html",
         "dev": "parcel src/index.html",
-        "start": "node init.js",
+        "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
+        "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
+        "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js,ts}\"",
+        "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js,ts}\"",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
