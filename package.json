@@ -4,24 +4,21 @@
     "description": "A mini tamagotchi replica game build using HTML/CSS/JS.",
     "main": "src/index.html",
     "scripts": {
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
+
         "build": "parcel build src/index.html",
         "dev": "parcel src/index.html",
-        "start": "serve -s build",
         "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
         "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
         "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js,ts}\"",
         "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js,ts}\"",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "heroku-postbuild": "npm run build"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/kurnisurni/fox-tamagotchi.git"
     },
     "keywords": [],
-    "author": "",
+    "author": "Kurnia",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/kurnisurni/fox-tamagotchi/issues"
