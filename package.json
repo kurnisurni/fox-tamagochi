@@ -1,0 +1,31 @@
+{
+    "name": "fox-tamagotchi",
+    "version": "1.0.0",
+    "description": "A mini tamagotchi replica game build using HTML/CSS/JS.",
+    "main": "index.js",
+    "scripts": {
+        "dev": "parcel src/index.html",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kurnisurni/fox-tamagotchi.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kurnisurni/fox-tamagotchi/issues"
+    },
+    "homepage": "https://github.com/kurnisurni/fox-tamagotchi#readme",
+    "devDependencies": {
+        "eslint": "^7.19.0",
+        "eslint-config-prettier": "^7.2.0",
+        "eslint-plugin-import": "^2.22.1",
+        "parcel-bundler": "^1.12.4",
+        "prettier": "^2.2.1"
+    },
+    "browserslist": [
+        "last 2 Chrome versions"
+    ]
+}
